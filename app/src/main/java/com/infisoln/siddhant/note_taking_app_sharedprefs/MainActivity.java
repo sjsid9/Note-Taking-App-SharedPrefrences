@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
                 arrayList.add(new Note(editText.getText().toString(), "" + sec));
                 notesAdapter.notifyDataSetChanged();
                 editor.apply();
+                editText.setText("");
             }
         });
 
