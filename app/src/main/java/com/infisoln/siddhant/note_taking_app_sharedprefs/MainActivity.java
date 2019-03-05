@@ -51,7 +51,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 long sec = System.currentTimeMillis();
-                editor.putString("" + sec, editText.getText().toString());
+                String etText = editText.getText().toString();
+                if (etText.equals("")) {
+                    return;
+                }
+                editor.putString("" + sec, etText);
                 arrayList.add(new Note(editText.getText().toString(), "" + sec));
                 notesAdapter.notifyDataSetChanged();
                 editor.apply();

@@ -10,15 +10,18 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesHolder> {
 
-    ArrayList<Note> arrayList;
-    Context ctx;
+    private ArrayList<Note> arrayList;
+    private Context ctx;
 
 
-    public NotesAdapter(ArrayList<Note> arrayList) {
+    NotesAdapter(ArrayList<Note> arrayList) {
         this.arrayList = arrayList;
     }
 
@@ -37,8 +40,13 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesHolder>
 
         Note note = arrayList.get(i);
 
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(Long.parseLong(note.getTimeStamp()));
+        DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        String date = formatter.format(calendar.getTime());
+
         notesHolder.Note.setText(note.getTitle());
-        notesHolder.timeStamp.setText(note.getTimeStamp());
+        notesHolder.timeStamp.setText(date);
 
     }
 
@@ -52,7 +60,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesHolder>
         TextView Note, timeStamp;
         Button delete;
 
-        public NotesHolder(@NonNull View itemView) {
+        NotesHolder(@NonNull View itemView) {
             super(itemView);
             Note = itemView.findViewById(R.id.tvNote);
             timeStamp = itemView.findViewById(R.id.tvTimeStamp);
@@ -67,7 +75,6 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesHolder>
                     Note currentNote = arrayList.get(getAdapterPosition());
                     editor.remove(currentNote.getTimeStamp());
                     arrayList.remove(currentNote);
-//                    Toast.makeText(ctx, ""+currentNote.getTimeStamp(), Toast.LENGTH_LONG).show();
                     notifyDataSetChanged();
                     editor.apply();
                 }

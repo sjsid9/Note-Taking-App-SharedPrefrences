@@ -7,27 +7,42 @@
     tools:context=".MainActivity">
 
     <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <EditText
-            android:id="@+id/etNote"
+        <android.support.design.widget.TextInputLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="4"
-            android:hint="Enter your note here" />
+            android:orientation="horizontal"
+            android:weightSum="5">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/etNote"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:hint="@string/enter_your_note_here"
+                android:maxLines="5" />
+
+
+        </android.support.design.widget.TextInputLayout>
 
         <Button
+            android:layout_gravity="center"
             android:id="@+id/btnAddNote"
             android:layout_width="0dp"
+            android:layout_margin="3dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Add" />
+            android:text="@string/add" />
 
     </LinearLayout>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView"
+        android:background="#fff"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

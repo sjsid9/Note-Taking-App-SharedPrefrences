@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:background="#ffffff"
+    android:layout_margin="5dp"
     android:layout_height="wrap_content">
 
     <LinearLayout
@@ -13,14 +15,14 @@
             android:id="@+id/tvNote"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Note"
+            android:text="@string/note"
             android:textSize="30sp" />
 
         <TextView
             android:id="@+id/tvTimeStamp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="time"
+            android:hint="@string/time"
             android:textSize="25sp" />
 
     </LinearLayout>
@@ -28,9 +30,10 @@
     <Button
         android:id="@+id/btnDelete"
         android:layout_width="0dp"
+        android:layout_margin="1dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_weight="1"
-        android:text="Delete" />
+        android:text="@string/delete" />
 
 </LinearLayout>

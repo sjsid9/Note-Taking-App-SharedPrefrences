@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Note-Taking-App-SharedPrefs</string>
+    <string name="enter_your_note_here">Enter Your Note Here</string>
+    <string name="add">Add</string>
+    <string name="note">Note</string>
+    <string name="time">time</string>
+    <string name="delete">Delete</string>
 </resources>

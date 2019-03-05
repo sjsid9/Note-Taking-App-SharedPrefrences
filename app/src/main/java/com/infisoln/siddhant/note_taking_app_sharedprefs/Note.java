@@ -1,27 +1,20 @@
 package com.infisoln.siddhant.note_taking_app_sharedprefs;
 
-public class Note {
+class Note {
 
     private String title, timeStamp;
 
-    public Note(String title, String timeStamp) {
+    Note(String title, String timeStamp) {
         this.title = title;
         this.timeStamp = timeStamp;
     }
 
-    public String getTitle() {
+    String getTitle() {
         return title;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getTimeStamp() {
+    String getTimeStamp() {
         return timeStamp;
     }
 
-    public void setTimeStamp(String timeStamp) {
-        this.timeStamp = timeStamp;
-    }
 }
