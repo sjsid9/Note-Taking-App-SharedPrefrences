@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import java.text.DateFormat;
@@ -58,7 +59,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesHolder>
     class NotesHolder extends RecyclerView.ViewHolder {
 
         TextView Note, timeStamp;
-        Button delete;
+        ImageButton delete;
 
         NotesHolder(@NonNull View itemView) {
             super(itemView);

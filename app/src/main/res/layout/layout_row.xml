@@ -27,8 +27,10 @@
 
     </LinearLayout>
 
-    <Button
+    <ImageButton
+        android:src="@drawable/btn_delete"
         android:id="@+id/btnDelete"
+        android:background="#fff"
         android:layout_width="0dp"
         android:layout_margin="1dp"
         android:layout_height="wrap_content"

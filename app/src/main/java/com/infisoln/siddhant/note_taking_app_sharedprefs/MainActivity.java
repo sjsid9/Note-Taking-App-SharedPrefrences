@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
 import java.util.ArrayList;
 import java.util.Map;
@@ -27,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         final SharedPreferences.Editor editor = sharedPreferences.edit();
 
         final EditText editText = findViewById(R.id.etNote);
-        Button btnAdd = findViewById(R.id.btnAddNote);
+        ImageButton btnAdd = findViewById(R.id.btnAddNote);
 
         Map<String, String> map = (Map<String, String>) sharedPreferences.getAll();
         Set<String> keySet = map.keySet();
